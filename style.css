@@ -107,3 +107,24 @@ nav a {
   background: #000;
   color: white;
 }
+
+.white {
+  background: white;
+  color: black;
+}
+
+/* SOCIAL ICONS */
+.socials i {
+  font-size: 35px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.profile-img img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
