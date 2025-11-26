@@ -127,4 +127,10 @@ nav a {
   object-fit: cover;
 }
 
-
+/* SCROLL DOWN ICON */
+.scroll-down {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
