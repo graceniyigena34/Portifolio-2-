@@ -28,3 +28,10 @@ header {
   font-size: 28px;
   font-weight: bold;
 }
+
+nav a {
+  margin-left: 35px;
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+}
