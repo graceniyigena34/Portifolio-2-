@@ -42,3 +42,11 @@ nav a {
   color: white !important;
   border-radius: 30px;
 }
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 60px;
+  align-items: center;
+}
