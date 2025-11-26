@@ -1,37 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Portifolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marie Grace Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-   <header>
-      <hi>Hello, I'm </hi>
-      <nav>
-         <ul>
-            <li><a href="#Home">Home </a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>                                                                                                     li><a href="#contact">Contact</a></li>
-         </ul>
-      </nav>
-   </header>
 
-   <!--Home -->
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">NMG</div>
 
-   <section id="home" class="home section">
-      <div class="container">
-         <h1>Marie Grace NIYIGENA  </h1>
-         <h2></h2>
-         <p>Front end Developer & Designer</p>
-         <p>I create beautiful, functional web experiences that
- solve real-world problems. Passionate about clean 
-code, intuitive design, and innovative solutions.</p>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Project</a>
+      <a href="#contact" class="contact-btn">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+
+    <div class="text-content">
+
+      <p class="hello">Hello, I'm</p>
+
+      <h1 class="name">MARIE GRACE NIYIGENA</h1>
+
+      <h2 class="title">Front end Developer & Designer</h2>
+
+      <p class="description">
+        I create beautiful, functional web experiences that solve real-world 
+        problems. Passionate about clean code, intuitive design, and innovative 
+        solutions.
+      </p>
+
+      <div class="buttons">
+        <button class="btn black">View My Work</button>
+        <button class="btn white">Get In Touch</button>
       </div>
-   </section>
 
-   
+      <div class="socials">
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+    </div>
+
+    <div class="profile-img">
+      <img src="profile.jpg" alt="Profile Image">
+    </div>
+
+  </section>
+
+  <div class="scroll-down">
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
