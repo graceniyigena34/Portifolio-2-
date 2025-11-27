@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - NMG</title>
+    <title>Contact - Marie Grace Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,228 +13,311 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
             color: #333;
+            overflow-x: hidden;
         }
 
-        .section-label {
-            text-align: center;
-            color: #999;
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            padding: 20px 0 10px;
-        }
-
+        /* HEADER */
         header {
-            background-color: white;
-            border-bottom: 1px solid #e0e0e0;
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            transition: all 0.3s ease;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: #000;
         }
 
-        .nav-links {
+        nav {
             display: flex;
-            gap: 30px;
-            align-items: center;
-            list-style: none;
+            gap: 2rem;
         }
 
-        .nav-links a {
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        nav a {
             text-decoration: none;
             color: #333;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
         }
 
-        .nav-links a:hover {
-            color: #666;
+        nav a:hover, nav a.active {
+            color: #007bff;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #007bff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
         }
 
         .contact-btn {
-            background-color: #000;
+            background: #007bff;
             color: white !important;
-            padding: 10px 24px;
+            padding: 0.5rem 1.5rem;
             border-radius: 25px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
         }
 
         .contact-btn:hover {
-            background-color: #333;
+            background: #0056b3;
+            transform: translateY(-2px);
         }
 
-        .container {
-            max-width: 800px;
+        /* CONTACT SECTION */
+        .contact-section {
+            padding: 120px 5% 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .contact-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px 80px;
         }
 
-        .section-title {
+        .section-header {
             text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .section-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* CONTACT INFO */
+        .contact-info {
+            animation: slideInLeft 1s ease;
+        }
+
+        .contact-info h2 {
             font-size: 2rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
+            color: #333;
         }
 
-        .section-subtitle {
-            text-align: center;
+        .contact-info p {
+            font-size: 1.1rem;
             color: #666;
-            margin-bottom: 40px;
-            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
 
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
+        .contact-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
         .contact-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
         }
 
         .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         .contact-icon {
             width: 50px;
             height: 50px;
-            background-color: #1a3a52;
-            border-radius: 50%;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
+            flex-shrink: 0;
         }
 
-        .contact-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
+        .contact-icon i {
+            font-size: 1.2rem;
+            color: white;
         }
 
-        .contact-label {
+        .contact-details h3 {
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            color: #333;
         }
 
-        .contact-value {
+        .contact-details p {
             color: #666;
-            font-size: 0.9rem;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* CONTACT FORM */
+        .contact-form-container {
+            animation: slideInRight 1s ease;
         }
 
         .contact-form {
-            background-color: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
+            gap: 1rem;
         }
 
         .form-group label {
-            margin-bottom: 8px;
+            display: block;
+            margin-bottom: 0.5rem;
             font-weight: 500;
-            font-size: 0.95rem;
+            color: #333;
         }
 
         .form-group input,
         .form-group textarea {
-            padding: 12px 16px;
-            border: none;
-            background-color: #e8e8e8;
-            border-radius: 8px;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
             font-size: 0.95rem;
             font-family: inherit;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            background-color: #ddd;
+            border-color: #007bff;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 150px;
+            min-height: 120px;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 15px;
-            background-color: #000;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #007bff, #0056b3);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            transition: background-color 0.3s, transform 0.2s;
+            gap: 0.5rem;
         }
 
         .submit-btn:hover {
-            background-color: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
         }
 
         .submit-btn:active {
-            transform: scale(0.98);
-        }
-
-        .submit-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
+            transform: translateY(0);
         }
 
         .success-message {
             display: none;
-            background-color: #4caf50;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
             text-align: center;
+            border: 1px solid #c3e6cb;
         }
 
         .success-message.show {
@@ -241,77 +325,12 @@
             animation: slideDown 0.3s ease;
         }
 
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            transition: 0.3s;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 20px;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: white;
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-                border-bottom: 1px solid #e0e0e0;
-                display: none;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .contact-form {
-                padding: 30px 20px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-        }
-
         /* FOOTER STYLES */
         .footer {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: white;
             padding: 50px 0 20px;
-            margin-top: 80px;
+            margin-top: 0;
         }
 
         .footer-container {
@@ -406,7 +425,94 @@
             color: #999;
         }
 
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 3rem;
+                gap: 2.5rem;
+                transition: right 0.3s ease;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            .section-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -416,137 +522,214 @@
                 grid-template-columns: 1fr;
                 gap: 25px;
             }
+        }
 
-            .footer {
-                padding: 40px 0 20px;
+        @media (max-width: 480px) {
+            .section-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .contact-card {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="section-label">CONTACTSECTION</div>
-    
+
+    <!-- HEADER -->
     <header>
-        <nav>
-            <div class="logo">NMG</div>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="Project.html">Project</a></li>
-                <li><a href="contact.html" class="contact-btn">Contact</a></li>
-            </ul>
+        <div class="logo">NMG</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="Project.html">Project</a>
+            <a href="contact.html" class="contact-btn active">Contact</a>
         </nav>
     </header>
 
-    <main class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Have a project in mind or just want to chat? Feel free to reach out!</p>
-
-        <div class="contact-info">
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                </div>
-                <div class="contact-label">Email</div>
-                <div class="contact-value">graceniyigena34@gmail.com</div>
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="section-header">
+                <h1>Get In Touch</h1>
+                <p>Have a project in mind or just want to chat? I'd love to hear from you. Let's create something amazing together!</p>
             </div>
 
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                </div>
-                <div class="contact-label">Phone</div>
-                <div class="contact-value">+25 791 168 136</div>
-            </div>
+            <div class="contact-content">
+                <!-- CONTACT INFO -->
+                <div class="contact-info">
+                    <h2>Let's Connect</h2>
+                    <p>
+                        I'm always open to discussing new opportunities, creative projects, 
+                        or just having a friendly conversation about web development and design.
+                    </p>
 
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>graceniyigena34@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <p>+25 791 168 136</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <p>Kigali, Rwanda</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Response Time</h3>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-label">Location</div>
-                <div class="contact-value">KIGALI-RWANDA</div>
+
+                <!-- CONTACT FORM -->
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-header">
+                            <h2>Send Message</h2>
+                            <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project or just say hello..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+
+                        <div class="success-message" id="successMessage">
+                            ✓ Thank you! Your message has been sent successfully. I'll get back to you soon.
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+    </section>
 
-        <form class="contact-form" id="contactForm">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Marie Grace" required>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">NMG</h3>
+                    <p class="footer-description">
+                        Frontend Developer & Designer creating clean, functional and intuitive web experiences.
+                    </p>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="grace@example.com" required>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="About.html">About</a></li>
+                            <li><a href="skills.html">Skills</a></li>
+                            <li><a href="Project.html">Projects</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li>graceniyigena34@gmail.com</li>
+                            <li>+25 791 168 136</li>
+                            <li>Kigali, Rwanda</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Follow Me</h4>
+                        <div class="footer-socials">
+                            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/marie-grace-niyigena" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://instagram.com/marie_grace_niyigena" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="form-group" style="margin-bottom: 20px;">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="How Can I Help You?" required>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Marie Grace Niyigena. All Rights Reserved.</p>
             </div>
+        </div>
+    </footer>
 
-            <div class="form-group" style="margin-bottom: 25px;">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell me about your project ...." required></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                </svg>
-                Send Message
-            </button>
-
-            <div class="success-message" id="successMessage">
-                ✓ Message sent successfully! I'll get back to you soon.
-            </div>
-        </form>
-    </main>
-
-     <!-- FOOTER SECTION -->
-  <footer class="footer">
-    <div class="footer-container">
-      <h2 class="footer-logo">NMG</h2>
-      <p class="footer-text">
-        Frontend Developer & Designer creating clean, functional and intuitive web experiences.
-      </p>
-      <div class="footer-socials">
-        <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com/in/marie-grace-niyigena" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://instagram.com/marie_grace_niyigena" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-      <p class="copyright">© 2025 Marie Grace Niyigena. All Rights Reserved.</p>
-    </div>
-  </footer>
     <script>
+        // Mobile menu toggle
         function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            const nav = document.getElementById('nav');
+            const hamburger = document.querySelector('.hamburger');
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
         }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-                document.getElementById('navLinks').classList.remove('active');
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('nav');
+                const hamburger = document.querySelector('.hamburger');
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
             });
         });
 
@@ -555,7 +738,8 @@
             e.preventDefault();
             
             const formData = {
-                name: document.getElementById('name').value,
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
                 email: document.getElementById('email').value,
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value
@@ -575,6 +759,24 @@
                 successMessage.classList.remove('show');
             }, 5000);
         });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Hamburger animation
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
     </script>
+
 </body>
 </html>
