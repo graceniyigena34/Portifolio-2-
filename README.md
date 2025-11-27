@@ -1,12 +1,14 @@
 # Marie Grace Niyigena - Portfolio Website
 
+The deployed link : https://portifolio-2-jmqq.vercel.app/
+
 A modern, responsive portfolio website showcasing frontend development and design skills.
 
-## 🌟 Overview
+##  Overview
 
 This is a professional portfolio website built with HTML, CSS, and JavaScript, featuring a clean and modern design that adapts to all screen sizes. The portfolio demonstrates expertise in frontend development, UI/UX design, and responsive web development.
 
-## 🚀 Features
+## Features
 
 ### 📱 Fully Responsive Design
 - **Ultra-wide screens** (1920px+)
@@ -15,21 +17,21 @@ This is a professional portfolio website built with HTML, CSS, and JavaScript, f
 - **Tablet** (900px, 768px)
 - **Mobile** (640px, 480px, 375px, 320px)
 
-### 🎨 Modern UI/UX
+###  Modern UI/UX
 - Clean, professional design
 - Smooth animations and transitions
 - Interactive hover effects
 - Glass-morphism navigation
 - Gradient backgrounds and text effects
 
-### 📄 Multi-Page Structure
+###  Multi-Page Structure
 - **Home** - Hero section with introduction
 - **About** - Personal information with CV download/upload
 - **Skills** - Interactive skill cards and progress bars
 - **Projects** - Filterable project showcase
 - **Contact** - Professional contact form
 
-### 🔧 Interactive Features
+###  Interactive Features
 - Mobile hamburger navigation
 - Project filtering system
 - CV upload/download functionality
@@ -37,7 +39,7 @@ This is a professional portfolio website built with HTML, CSS, and JavaScript, f
 - Social media integration
 - Smooth scrolling effects
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **HTML5** - Semantic markup
 - **CSS3** - Modern styling with Flexbox and Grid
@@ -45,7 +47,7 @@ This is a professional portfolio website built with HTML, CSS, and JavaScript, f
 - **Font Awesome** - Icons and social media icons
 - **Google Fonts** - Typography (Inter font family)
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 Klab/
@@ -60,7 +62,7 @@ Klab/
 └── README.md           # Project documentation
 ```
 
-## 🎯 Key Sections
+##  Key Sections
 
 ### Home Page
 - Hero section with animated introduction
@@ -92,7 +94,7 @@ Klab/
 - Form validation and success messages
 - Response time information
 
-## 🌐 Browser Support
+##  Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
@@ -100,7 +102,7 @@ Klab/
 - Edge (latest)
 - Mobile browsers
 
-## 📱 Mobile Features
+##  Mobile Features
 
 - Touch-friendly navigation
 - Optimized form inputs
@@ -108,7 +110,7 @@ Klab/
 - Mobile-first design approach
 - Hamburger menu with smooth animations
 
-## 🎨 Design Highlights
+##  Design Highlights
 
 - **Color Scheme**: Blue gradient (#007bff to #0056b3)
 - **Typography**: Inter font family for modern readability
@@ -116,27 +118,27 @@ Klab/
 - **Animations**: Smooth CSS transitions and keyframe animations
 - **Icons**: Font Awesome for consistent iconography
 
-## 🔗 Social Media Integration
+##  Social Media Integration
 
 - GitHub: Direct links to repositories
 - LinkedIn: Professional networking
 - Instagram: Personal branding
 
-## 📧 Contact Information
+##  Contact Information
 
 - **Email**: graceniyigena34@gmail.com
 - **Phone**: +25 791 168 136
 - **Location**: Kigali, Rwanda
 - **Response Time**: Within 24 hours
 
-## 🚀 Getting Started
+##  Getting Started
 
 1. Clone or download the project files
 2. Open `index.html` in a web browser
 3. Navigate through the portfolio using the navigation menu
 4. Test responsive design by resizing the browser window
 
-## 📝 Customization
+##  Customization
 
 To customize this portfolio for your own use:
 
@@ -148,7 +150,7 @@ To customize this portfolio for your own use:
 6. Customize color scheme in CSS
 7. Add your own projects and skills
 
-## 🔧 Features Implementation
+##  Features Implementation
 
 ### CV Management
 - Download existing CV
@@ -167,7 +169,7 @@ To customize this portfolio for your own use:
 - Smooth animations
 - Interactive project cards
 
-## 📊 Performance
+##  Performance
 
 - Optimized images
 - Minimal external dependencies
@@ -175,14 +177,14 @@ To customize this portfolio for your own use:
 - Efficient CSS with media queries
 - Lightweight JavaScript
 
-## 🎯 Target Audience
+##  Target Audience
 
 - Potential employers
 - Clients seeking web development services
 - Fellow developers and designers
 - Recruiters and hiring managers
 
-## 📈 Future Enhancements
+##  Future Enhancements
 
 - Blog section
 - Dark mode toggle
@@ -191,7 +193,7 @@ To customize this portfolio for your own use:
 - CMS integration
 - Performance analytics
 
-## 👨‍💻 Developer
+##  Developer
 
 **Marie Grace Niyigena**
 - Frontend Developer & Designer
@@ -201,3 +203,6 @@ To customize this portfolio for your own use:
 ---
 
 © 2025 Marie Grace Niyigena. All Rights Reserved.
+
+
+screenshoot image about he project ![alt text](<Screenshot 2025-11-28 012025.png>)
