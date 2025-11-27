@@ -46,7 +46,14 @@
                     and continuously learning new technologies.
                 </p>
 
-                <a href="GraceCV.pdf" class="btn">Download CV</a>
+                <div class="cv-section">
+                    <a href="GraceCV.pdf" class="btn download-btn" id="downloadBtn">Download CV</a>
+                    <div class="upload-section">
+                        <input type="file" id="cvUpload" accept=".pdf,.doc,.docx" style="display: none;">
+                        <button class="btn upload-btn" onclick="document.getElementById('cvUpload').click()">Upload New CV</button>
+                        <div class="upload-status" id="uploadStatus"></div>
+                    </div>
+                </div>
             </div>
 
         </div>
