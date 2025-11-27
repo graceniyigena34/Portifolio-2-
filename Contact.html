@@ -470,8 +470,119 @@
             }
         }
 
-        /* RESPONSIVE */
+        /* ULTRA WIDE SCREENS */
+        @media (min-width: 1920px) {
+            .contact-container {
+                max-width: 1400px;
+            }
+
+            .section-header h1 {
+                font-size: 3.5rem;
+            }
+
+            .section-header p {
+                font-size: 1.4rem;
+            }
+
+            .contact-content {
+                gap: 5rem;
+            }
+
+            .contact-form {
+                padding: 3rem;
+            }
+        }
+
+        /* LARGE DESKTOP */
+        @media (max-width: 1440px) {
+            .contact-container {
+                max-width: 1200px;
+            }
+
+            .section-header h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        /* STANDARD DESKTOP */
+        @media (max-width: 1200px) {
+            .contact-section {
+                padding: 120px 4% 80px;
+            }
+
+            .contact-content {
+                gap: 3.5rem;
+            }
+
+            .section-header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        /* LAPTOP */
+        @media (max-width: 1024px) {
+            header {
+                padding: 1rem 4%;
+            }
+
+            .contact-section {
+                padding: 100px 4% 60px;
+            }
+
+            .section-header h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-header p {
+                font-size: 1.1rem;
+            }
+
+            .contact-content {
+                gap: 3rem;
+            }
+
+            .contact-form {
+                padding: 2.2rem;
+            }
+
+            nav {
+                gap: 1.5rem;
+            }
+
+            nav a {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* TABLET LANDSCAPE */
+        @media (max-width: 900px) {
+            .section-header h1 {
+                font-size: 2.6rem;
+            }
+
+            .contact-content {
+                gap: 2.5rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .contact-card {
+                padding: 1.2rem;
+            }
+        }
+
+        /* TABLET PORTRAIT */
         @media (max-width: 768px) {
+            header {
+                padding: 1rem 3%;
+            }
+
+            .logo {
+                font-size: 1.6rem;
+            }
+
             .hamburger {
                 display: flex;
             }
@@ -490,19 +601,56 @@
                 padding-top: 3rem;
                 gap: 2.5rem;
                 transition: right 0.3s ease;
+                box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
             }
 
             nav.active {
                 right: 0;
             }
 
+            nav a {
+                font-size: 1.3rem;
+                padding: 0.8rem 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .contact-btn {
+                margin-top: 1rem;
+                padding: 1rem 2rem !important;
+            }
+
+            .contact-section {
+                padding: 100px 3% 60px;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
+            }
+
             .section-header h1 {
-                font-size: 2.5rem;
+                font-size: 2.4rem;
+                line-height: 1.2;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+                padding: 0 1rem;
             }
 
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
+            }
+
+            .contact-info h2 {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+
+            .contact-info p {
+                text-align: center;
+                padding: 0 1rem;
             }
 
             .contact-form {
@@ -511,6 +659,7 @@
 
             .form-row {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .footer-content {
@@ -524,17 +673,205 @@
             }
         }
 
+        /* MOBILE LANDSCAPE */
+        @media (max-width: 640px) {
+            .contact-section {
+                padding: 90px 3% 50px;
+            }
+
+            .section-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-header p {
+                font-size: 0.95rem;
+            }
+
+            .contact-content {
+                gap: 2.5rem;
+            }
+
+            .contact-form {
+                padding: 1.8rem;
+            }
+
+            .contact-card {
+                padding: 1.2rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.8rem;
+            }
+
+            .contact-icon {
+                align-self: center;
+            }
+        }
+
+        /* MOBILE PORTRAIT */
         @media (max-width: 480px) {
+            header {
+                padding: 0.8rem 2%;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .contact-section {
+                padding: 80px 2% 40px;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+
             .section-header h1 {
                 font-size: 2rem;
+                line-height: 1.1;
+            }
+
+            .section-header p {
+                font-size: 0.9rem;
+                padding: 0 0.5rem;
+            }
+
+            .contact-content {
+                gap: 2rem;
+            }
+
+            .contact-info h2 {
+                font-size: 1.6rem;
+            }
+
+            .contact-info p {
+                font-size: 1rem;
+                padding: 0 0.5rem;
             }
 
             .contact-form {
                 padding: 1.5rem;
             }
 
+            .form-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .form-header p {
+                font-size: 0.9rem;
+            }
+
             .contact-card {
                 padding: 1rem;
+            }
+
+            .contact-details h3 {
+                font-size: 1rem;
+            }
+
+            .contact-details p {
+                font-size: 0.9rem;
+            }
+
+            .submit-btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* SMALL MOBILE */
+        @media (max-width: 375px) {
+            .contact-section {
+                padding: 70px 2% 30px;
+            }
+
+            .section-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-header p {
+                font-size: 0.85rem;
+            }
+
+            .contact-content {
+                gap: 1.5rem;
+            }
+
+            .contact-info h2 {
+                font-size: 1.4rem;
+            }
+
+            .contact-form {
+                padding: 1.2rem;
+            }
+
+            .form-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .contact-card {
+                padding: 0.8rem;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .contact-icon i {
+                font-size: 1rem;
+            }
+
+            .submit-btn {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* EXTRA SMALL MOBILE */
+        @media (max-width: 320px) {
+            .section-header h1 {
+                font-size: 1.6rem;
+            }
+
+            .section-header p {
+                font-size: 0.8rem;
+            }
+
+            .contact-info h2 {
+                font-size: 1.3rem;
+            }
+
+            .contact-info p {
+                font-size: 0.9rem;
+            }
+
+            .contact-form {
+                padding: 1rem;
+            }
+
+            .form-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .form-header p {
+                font-size: 0.8rem;
+            }
+
+            .contact-card {
+                padding: 0.7rem;
+            }
+
+            .contact-details h3 {
+                font-size: 0.9rem;
+            }
+
+            .contact-details p {
+                font-size: 0.8rem;
+            }
+
+            .submit-btn {
+                padding: 0.7rem 1rem;
+                font-size: 0.85rem;
             }
         }
     </style>
