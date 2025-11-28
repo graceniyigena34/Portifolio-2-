@@ -2,7 +2,7 @@
 The deployed link to netlify : https://sparkly-douhua-e2d62e.netlify.app/
 
 and I tried to use the vercel but it is not working very well
-The deployed link : https://portifolio-2-jmqq.vercel.app/
+The deployed link : https://portifolio-2-qrqo.vercel.app/index.html
 
 A modern, responsive portfolio website showcasing frontend development and design skills.
 
