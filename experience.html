@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Marie Grace Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: #007bff;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #007bff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        .contact-btn {
+            background: #007bff;
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+        }
+
+        .experience-section {
+            padding: 120px 5% 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .experience-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #007bff;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #007bff;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #007bff;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #007bff;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .timeline-content ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-content ul li {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding-top: 3rem;
+                gap: 2.5rem;
+                transition: right 0.3s ease;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin-left: 50px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #007bff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #007bff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">NMG</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="experience.html" class="active">Experience</a>
+            <a href="Project.html">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html" class="contact-btn">Contact</a>
+        </nav>
+    </header>
+
+    <section class="experience-section">
+        <div class="experience-container">
+            <div class="section-header">
+                <h1>Work Experience</h1>
+                <p>My professional journey and career milestones</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - Present</span>
+                        <h3>Frontend Developer</h3>
+                        <h4>Tech Company, Kigali</h4>
+                        <p>Leading frontend development projects and creating responsive web applications.</p>
+                        <ul>
+                            <li>Developed 10+ responsive web applications</li>
+                            <li>Improved website performance by 40%</li>
+                            <li>Mentored junior developers</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - 2024</span>
+                        <h3>UI/UX Designer</h3>
+                        <h4>Design Studio, Kigali</h4>
+                        <p>Created user-centered designs and improved user experience across multiple platforms.</p>
+                        <ul>
+                            <li>Designed 15+ web and mobile interfaces</li>
+                            <li>Conducted user research and testing</li>
+                            <li>Increased user engagement by 35%</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2023</span>
+                        <h3>Web Developer Intern</h3>
+                        <h4>Startup Company, Kigali</h4>
+                        <p>Assisted in developing web applications and learned modern development practices.</p>
+                        <ul>
+                            <li>Built responsive landing pages</li>
+                            <li>Collaborated with senior developers</li>
+                            <li>Learned React and modern JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 - 2022</span>
+                        <h3>Freelance Web Designer</h3>
+                        <h4>Self-Employed</h4>
+                        <p>Provided web design services to local businesses and startups.</p>
+                        <ul>
+                            <li>Completed 20+ client projects</li>
+                            <li>Built strong client relationships</li>
+                            <li>Developed portfolio of diverse work</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #333;">Read My Blog</h2>
+                <p style="color: #666; margin-bottom: 2rem; font-size: 1.1rem;">Check out my latest articles on web development and design</p>
+                <a href="blog.html" style="display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(45deg, #007bff, #0056b3); color: white; text-decoration: none; border-radius: 30px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">View Blog <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            const hamburger = document.querySelector('.hamburger');
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('nav');
+                const hamburger = document.querySelector('.hamburger');
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Marie Grace Niyigena</h3>
+                <p>Frontend Developer & Designer</p>
+                <p>Creating beautiful and functional web experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="About.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="Project.html">Projects</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> graceniyigena34@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +25 791 168 136</p>
+                <p><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Me</h3>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/marie-grace-niyigena" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/marie_grace_niyigena" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Marie Grace Niyigena. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

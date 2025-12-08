@@ -1,6 +1,7 @@
 # Marie Grace Niyigena - Portfolio Website
 
 The deployed link : https://portifolio-2-jmqq.vercel.app/
+The deployed link to the netlify 
 
 A modern, responsive portfolio website showcasing frontend development and design skills.
 
