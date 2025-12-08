@@ -1,7 +1,13 @@
-# Marie Grace Niyigena - Portfolio Website
+<!-- # Marie Grace Niyigena - Portfolio Website
+The deployed link to netlify : https://sparkly-douhua-e2d62e.netlify.app/
 
+<<<<<<< HEAD
 The deployed link : https://portifolio-2-jmqq.vercel.app/
 The deployed link to the netlify 
+=======
+and I tried to use the vercel but it is not working very well
+The deployed link : https://portifolio-2-qrqo.vercel.app/index.html
+>>>>>>> 552ecaa5db683bdd40ac73d55de72677882ca916
 
 A modern, responsive portfolio website showcasing frontend development and design skills.
 
@@ -206,4 +212,4 @@ To customize this portfolio for your own use:
 © 2025 Marie Grace Niyigena. All Rights Reserved.
 
 
-screenshoot image about he project ![alt text](<Screenshot 2025-11-28 012025.png>)
+screenshoot image about he project ![alt text](<Screenshot 2025-11-28 012025.png>) -->
