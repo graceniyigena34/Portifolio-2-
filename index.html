@@ -262,48 +262,102 @@
 
     /* FOOTER */
     .footer {
-      background: #000;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
       color: white;
-      padding: 3rem 5%;
-      text-align: center;
+      padding: 50px 0 20px;
+      margin-top: 0;
     }
 
     .footer-container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
     }
 
-    .footer-logo {
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand .footer-logo {
       font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: 15px;
+      color: #007bff;
     }
 
-    .footer-text {
-      margin-bottom: 2rem;
+    .footer-description {
+      color: #ccc;
+      line-height: 1.6;
+      max-width: 300px;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .footer-section h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #007bff;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-section ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #007bff;
+    }
+
+    .footer-section ul li:not(:has(a)) {
       color: #ccc;
     }
 
     .footer-socials {
       display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      gap: 15px;
     }
 
     .footer-socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
       color: #ccc;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
     }
 
     .footer-socials a:hover {
-      color: #007bff;
+      background: #007bff;
+      color: white;
+      transform: translateY(-3px);
     }
 
-    .copyright {
-      color: #666;
-      font-size: 0.9rem;
+    .footer-bottom {
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      text-align: center;
+      color: #999;
     }
 
     /* ANIMATIONS */
@@ -796,19 +850,51 @@
     </div>
   </section>
 
-  <!-- FOOTER SECTION -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
-      <h2 class="footer-logo">NMG</h2>
-      <p class="footer-text">
-        Frontend Developer & Designer creating clean, functional and intuitive web experiences.
-      </p>
-      <div class="footer-socials">
-        <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com/in/marie-grace-niyigena" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://instagram.com/marie_grace_niyigena" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3 class="footer-logo">NMG</h3>
+          <p class="footer-description">
+            Frontend Developer & Designer creating clean, functional and intuitive web experiences.
+          </p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About.html">About</a></li>
+              <li><a href="skills.html">Skills</a></li>
+              <li><a href="Project.html">Projects</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <ul>
+              <li>graceniyigena34@gmail.com</li>
+              <li>+25 791 168 136</li>
+              <li>Kigali, Rwanda</li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Follow Me</h4>
+            <div class="footer-socials">
+              <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://linkedin.com/in/marie-grace-niyigena" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://instagram.com/marie_grace_niyigena" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="copyright">© 2025 Marie Grace Niyigena. All Rights Reserved.</p>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Marie Grace Niyigena. All Rights Reserved.</p>
+      </div>
     </div>
   </footer>
 
